@@ -100,7 +100,6 @@ open class ChatChannelViewModel: ObservableObject, MessagesDataSource {
         scrollToMessage: ChatMessage? = nil
     ) {
         self.channelController = channelController
-        channelController.synchronize()
         if let messageController = messageController {
             self.messageController = messageController
             messageController.synchronize()
@@ -111,6 +110,12 @@ open class ChatChannelViewModel: ObservableObject, MessagesDataSource {
         } else {
             channelDataSource = ChatChannelDataSource(controller: channelController)
         }
+        
+        channelController.synchronize { [weak self] _ in
+            guard let self = self else { return }
+            self.messages = self.channelDataSource.messages
+        }
+        
         channelDataSource.delegate = self
         messages = channelDataSource.messages
         
