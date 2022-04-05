@@ -200,21 +200,20 @@ open class ChatChannelListViewModel: ObservableObject, ChatChannelListController
         didChangeChannels changes: [ListChange<ChatChannel>]
     ) {
         handleChannelListChanges(controller)
-        print("====== changes are \(changes)")
     }
     
     public func controller(
         _ controller: ChatChannelListController,
         shouldAddNewChannelToList channel: ChatChannel
     ) -> Bool {
-        channel.membership != nil
+        true
     }
     
     public func controller(
         _ controller: ChatChannelListController,
         shouldListUpdatedChannel channel: ChatChannel
     ) -> Bool {
-        true
+        channel.membership != nil
     }
     
     // MARK: - private
