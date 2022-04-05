@@ -200,6 +200,7 @@ open class ChatChannelListViewModel: ObservableObject, ChatChannelListController
         didChangeChannels changes: [ListChange<ChatChannel>]
     ) {
         handleChannelListChanges(controller)
+        print("====== changes are \(changes)")
     }
     
     public func controller(
