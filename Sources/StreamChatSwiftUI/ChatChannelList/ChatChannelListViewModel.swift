@@ -214,7 +214,7 @@ open class ChatChannelListViewModel: ObservableObject, ChatChannelListController
         _ controller: ChatChannelListController,
         shouldListUpdatedChannel channel: ChatChannel
     ) -> Bool {
-        channel.membership != nil
+        true
     }
     
     // MARK: - private
