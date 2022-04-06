@@ -93,6 +93,9 @@ struct MessageContainerView<Factory: ViewFactory>: View {
                                 })
                         }
                     )
+                    .gesture(TapGesture(count: 2).onEnded {
+                        handleGestureForMessage(showsMessageActions: true)
+                    })
                     .onTapGesture {}
                     .onLongPressGesture(perform: {
                         handleGestureForMessage(showsMessageActions: true)
