@@ -30,11 +30,11 @@
       },
       {
         "package": "StreamChat",
-        "repositoryURL": "https://github.com/GetStream/stream-chat-swift.git",
+        "repositoryURL": "https://github.com/Vah-Vah/stream-chat-swift",
         "state": {
-          "branch": null,
-          "revision": "a1e769e93b500975d0aece93d11acd90cd3c7fa2",
-          "version": "4.13.0"
+          "branch": "vahvah/enhancement/make-chat-channel-init-public",
+          "revision": "af493911756f969cf203df7a5ac5006ced79a444",
+          "version": null
         }
       },
       {

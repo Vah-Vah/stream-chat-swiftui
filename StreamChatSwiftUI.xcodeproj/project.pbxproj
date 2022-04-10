@@ -169,7 +169,6 @@
 		847BA08527E0BA2500ED20C7 /* EventNotificationCenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847BA08427E0BA2500ED20C7 /* EventNotificationCenterMock.swift */; };
 		847BA08727E0BACB00ED20C7 /* WebSocketPingControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847BA08627E0BACB00ED20C7 /* WebSocketPingControllerMock.swift */; };
 		847BA08927E0BAEE00ED20C7 /* WebSocketEngineMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847BA08827E0BAEE00ED20C7 /* WebSocketEngineMock.swift */; };
-		847CEFEC27BFAB6400606257 /* StreamChat in Frameworks */ = {isa = PBXBuildFile; productRef = 847CEFEB27BFAB6400606257 /* StreamChat */; };
 		847CEFEE27C38ABE00606257 /* MessageCachingUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847CEFED27C38ABE00606257 /* MessageCachingUtils.swift */; };
 		848399EA275FB3E9003075E4 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 848399E9275FB3E9003075E4 /* SnapshotTesting */; };
 		848399EC275FB41B003075E4 /* ChatChannelListView_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848399EB275FB41B003075E4 /* ChatChannelListView_Tests.swift */; };
@@ -295,6 +294,7 @@
 		84F2908E276B92A40045472D /* GalleryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F2908D276B92A40045472D /* GalleryHeaderView.swift */; };
 		84F29090276CC1280045472D /* ShareButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F2908F276CC1280045472D /* ShareButtonView.swift */; };
 		84FF723F2782FB2E006E26C8 /* iMessagePocView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FF723E2782FB2E006E26C8 /* iMessagePocView.swift */; };
+		E5ECD7FB280320E1002DE05E /* StreamChat in Frameworks */ = {isa = PBXBuildFile; productRef = E5ECD7FA280320E1002DE05E /* StreamChat */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -634,7 +634,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				847CEFEC27BFAB6400606257 /* StreamChat in Frameworks */,
+				E5ECD7FB280320E1002DE05E /* StreamChat in Frameworks */,
 				8465FCB727468B0600AF091E /* NukeUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1301,7 +1301,7 @@
 			name = StreamChatSwiftUI;
 			packageProductDependencies = (
 				8465FCB627468B0600AF091E /* NukeUI */,
-				847CEFEB27BFAB6400606257 /* StreamChat */,
+				E5ECD7FA280320E1002DE05E /* StreamChat */,
 			);
 			productName = StreamChatSwiftUI;
 			productReference = 8465FBB52746873A00AF091E /* StreamChatSwiftUI.framework */;
@@ -1383,7 +1383,7 @@
 			packageReferences = (
 				8465FCB527468B0600AF091E /* XCRemoteSwiftPackageReference "NukeUI" */,
 				848399E6275FB3BE003075E4 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
-				847CEFEA27BFAB6400606257 /* XCRemoteSwiftPackageReference "stream-chat-swift" */,
+				E5ECD7F9280320E1002DE05E /* XCRemoteSwiftPackageReference "stream-chat-swift" */,
 			);
 			productRefGroup = 8465FBB62746873A00AF091E /* Products */;
 			projectDirPath = "";
@@ -2151,20 +2151,20 @@
 				minimumVersion = 0.7.0;
 			};
 		};
-		847CEFEA27BFAB6400606257 /* XCRemoteSwiftPackageReference "stream-chat-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/GetStream/stream-chat-swift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.13.0;
-			};
-		};
 		848399E6275FB3BE003075E4 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.8.2;
+			};
+		};
+		E5ECD7F9280320E1002DE05E /* XCRemoteSwiftPackageReference "stream-chat-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Vah-Vah/stream-chat-swift";
+			requirement = {
+				branch = "vahvah/enhancement/make-chat-channel-init-public";
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -2180,15 +2180,15 @@
 			package = 8465FCB227468A8D00AF091E /* XCRemoteSwiftPackageReference "stream-chat-swift" */;
 			productName = StreamChat;
 		};
-		847CEFEB27BFAB6400606257 /* StreamChat */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 847CEFEA27BFAB6400606257 /* XCRemoteSwiftPackageReference "stream-chat-swift" */;
-			productName = StreamChat;
-		};
 		848399E9275FB3E9003075E4 /* SnapshotTesting */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 848399E6275FB3BE003075E4 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
 			productName = SnapshotTesting;
+		};
+		E5ECD7FA280320E1002DE05E /* StreamChat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E5ECD7F9280320E1002DE05E /* XCRemoteSwiftPackageReference "stream-chat-swift" */;
+			productName = StreamChat;
 		};
 /* End XCSwiftPackageProductDependency section */
 
